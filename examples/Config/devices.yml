@@ -1,0 +1,27 @@
+# Define and Configure the devices relevant to the experiment. Devices are only the ones communicating with a computer.
+# For example an oscilloscope is a device. A photodiode connected to an oscilloscope is a sensor, a piezo stage connected
+# to a DAQ card is an actuator.
+# The Main key of the device has to be unique. As you can see with the two oscilloscopes, they have the same name, but
+# Their main key is different and the notes are different.
+# Whatever parameter is added, will be saved in the metadata. Therefore, even if maybe not relevant to the experiment,
+# it can be useful for traceability. As an example: the Santec laser does not need to have the model defined for it to
+# work, but it can be useful to store that information. There can also be notes, for example see the oscilloscope.
+
+#TSL-710:
+#  type: scan laser
+#  name: Santec Laser
+#  model: lantz_experiment.models:ModelBase # last one is the name of the class inside the file.
+#  device_model: TSL-710
+#  connection:
+#    type: GPIB
+#    port: 1
+
+NI-DAQ:
+  type: daq
+  name: National Instruments DAQ
+  model: models:DummyDaq
+
+#oscilloscope:
+#  type: daq
+#  name: Tektronics
+#  model: lantz_experiment.models.daq:ModelDaq
